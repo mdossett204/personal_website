@@ -1,4 +1,4 @@
-# Derrick — Minimal Theme for Jekyll.
+# Based on Derrick — Minimal Theme for Jekyll.
 
 Derrick is a clean minimal and fast theme for a personal blog.
 
