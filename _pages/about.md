@@ -5,16 +5,24 @@ permalink: /about/
 image: '/assets/img/01.jpg'
 ---
 
-Hi, my name is Mindy. I like fiddling with data.
+Hi everyone! Welcome to my personal website.  My name is Mindy, a data enthusiast. 
 
-Combine domain experience with programming skills to solve issues.
-
-***
-
-> Combine data engineering, data analyses, and programming to find solutions.
+Machine learning, deep learning, and feature engineering absolutely excite me. I am a firm believer that business solutions and market insights can be uncovered by delving into the data:
 
 ***
 
-Proactively keeping up with new data science technology.
+> Strong knowledge in computational thinking, statistical insights, and big data management with a cloud based serverless platform can be a powerful combination for finding the right path in any business application. 
 
-Love to learn what is out there.
+***
+
+I am fortunate to be able to experiment and build deep learning/machine learning models in Hadoop/Spark environment at my job to catch identity thieves and protect innocent victims. Additionally, I get the opportunity to build end to end machine learning pipelines for production. This allows me to see the real world impact of AI.
+
+Outside my work, I love learning new programming languages to keep reinforcing computational thinking and algorithmic problem solving. Although I use Python, Scala, and SQL everyday for my job, my current obsession is Java.
+
+Another hobby of mine is to experiment with various machine learning/deep learning models using kaggle datasets with the goal of deploying some of the working models on AWS using a serverless architecture. 
+
+The purpose of this personal website is to share some of my data science projects and code snippets. 
+
+If you would like to collaborate on a data science project or if you have any questions about any of the posts, please feel free to contact me. 
+
+
