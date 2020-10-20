@@ -3,7 +3,7 @@ layout: post
 title:  "Transfer Learning for Social Media Marketing"
 date:   2020-10-19 11:17:55 +0300
 image:  '/assets/img/03.jpg'
-tags:   Jekyll
+tags:   deep learning, transfer learning, marketing, social media, AI, data science
 ---
 Generally speaking, an average Instagram advertisement costs around $0.50 to $1 per click. In more competitive fields such as the fashion industry, it can cost up to $3 per click. The cost per click can also vary among age groups. For example, the 18–24, 25–34, and 35–44 age groups can cost more than others. Ad costs can also vary based on the targeted sex. Facebook ads targeting females tend to have a higher cost. These relatively high costs per click combined with the fact that not all clicks lead to sales can make ad campaigns on social media quite expensive.
 
@@ -24,9 +24,9 @@ I designed a 3 product recommender model as a proof of concept for this marketin
 
 ![Face Focused Concept](/assets/img/blog1_img2.png){:class="post-image img-blur"}. 
 
-As shown in the figure above, I start with the open source face_recognition library to perform face cropping. Transfer learning models are then utilized to perform product predictions for more targeted advertisement. In this model, the recommended items are hat, beard, or eyewear products (HBE).
+As shown in the figure above, I start with the open source [face_recognition library](https://github.com/ageitgey/face_recognition) to perform face cropping. Transfer learning models are then utilized to perform product predictions for more targeted advertisement. In this model, the recommended items are hat, beard, or eyewear products (HBE).
 
-For this prototype, I manually web-scraped 653 images from google images. For training of my models, both image labeling and cropping are done manually as well. Generally speaking, it is very labor intensive to obtain adequate labeled image data for CNN projects. I decided to use transfer learning models due to limited data. Additionally, pictures of people are very similar to images available on ImageNet on which many sophisticated CNN models such as Inception, ResNet, and VGG have been trained . You can learn more about different CNN Architectures [here](https://medium.com/analytics-vidhya/cnns-architectures-lenet-alexnet-vgg-googlenet-resnet-and-more-666091488df5). Due to limited GPU resources and project time constraints, I chose to use the VGG16 and ResNet50 models as my two base models. I unfroze the last 5 layers of VGG16 and ResNet50 for fine-tuning of model parameters. As mentioned earlier, you can find detailed code in the GitHub Repository.
+For this prototype, I manually web-scraped 653 images from google images. For training of my models, both image labeling and cropping are done manually as well. Generally speaking, it is very labor intensive to obtain adequate labeled image data for CNN projects. I decided to use transfer learning models due to limited data. Additionally, pictures of people are very similar to images available on ImageNet on which many sophisticated CNN models such as Inception, ResNet, and VGG have been trained . You can learn more about different CNN Architectures [here](https://medium.com/analytics-vidhya/cnns-architectures-lenet-alexnet-vgg-googlenet-resnet-and-more-666091488df5). Due to limited GPU resources and project time constraints, I chose to use the VGG16 and ResNet50 models as my two base models. I unfroze the last 5 layers of VGG16 and ResNet50 for fine-tuning of model parameters. As mentioned earlier, you can find detailed code in the [GitHub Repository](https://github.com/mzhou356/img2recommender).
 
 To simplify the multi-classification task, I used a one-vs-rest multi-classification approach. Three binary classifiers are created for both VGG16 and ResNet50:
 * eyewear vs no eyewear
