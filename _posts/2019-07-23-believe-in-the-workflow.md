@@ -4,7 +4,7 @@ title:  StopWords and Lexicon Normalization for Sentiment Analysis
 date:   2020-10-21 10:58:00
 image:  '/assets/img/02.jpg'
 tags:   [NLP, stopwords, lexicon normalization, sentiment analysis, data science, AI]
-
+---
 
 Sentiment analysis aids in understanding human behavior for national security, political campaigns, and scientific research. It also allows businesses to gain valuable marketing information from customer reviews, social media sites, online blogs, and various internet forums. Not surprisingly, sentiment analysis is a very common yet crucial natural language processing (NLP) task that many data scientists are required to perform.
 
