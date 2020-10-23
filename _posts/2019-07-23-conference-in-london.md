@@ -4,7 +4,7 @@ title:  Deploying Car Price Model
 date:   2019-07-24 14:50:35 +0300
 image:  '/assets/img/07.jpg'
 tags:   [travel, london, work, blog]
-cate_cols: {model:[], year:[], transmission: [], fuelType:[], brand:[]}
+cate_cols: {model:["Fiesta", "M3"], year:[1929,1930], transmission: [automatic,manual], fuelType:[gas, hybrid], brand:[bmw, ford]}
 num_cols: [mileage, mpg, engineSize]
 ---
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
