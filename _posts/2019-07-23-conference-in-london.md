@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_app_1
 title:  Deploying Car Price Model 
 date:   2019-07-24 14:50:35 +0300
 image:  '/assets/img/07.jpg'
