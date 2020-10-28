@@ -1,17 +1,28 @@
 $(function() {
+	var numCols = ["mileage", "mpg", "engineSize"];
 	
 	function createTable(result){
 		let $table = $("<table/>");
 		$.each(result, function(colName, colValues){
-			createRow($table, colName, colValues);	
+			createOptionRow($table, colName, colValues);	
+		});
+		$.each(numCols, function(_, colName){
+			createNumRow($table, colName);
 		});
 		return $table;
 	}
 	
-	function createRow(table, colName, colValues){
+	function createOptionRow(table, colName, colValues){
 		let $row = $("<tr/>");
 		createLabelCol($row, colName);
 		createOptionCol($row, colName, colValues);
+		table.append($row);
+	}
+	
+	function createNumRow(table, colName){
+		let $row = $("<tr/>");
+		createLabelCol($row, colName);
+		createNumColInput($row, colName);
 		table.append($row);
 	}
 	
@@ -27,6 +38,13 @@ $(function() {
 		let $dataList = $("<datalist/>").attr("id", colName+"s");
 		createOptions($dataList, colValues);
 		$col.append($dataList);
+		row.append($col);
+	}
+	
+	function createNumColInput(row,colName){
+		let $col = $("<td/>");
+		let $input = $("<input/>").attr({type:"text", "name":colName, "id":colName});
+		$col.append($input);
 		row.append($col);
 	}
 	
