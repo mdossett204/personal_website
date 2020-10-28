@@ -4,25 +4,22 @@ $(function() {
 	function createTable(result){
 		let $table = $("<table/>");
 		$.each(result, function(colName, colValues){
-			createOptionRow($table, colName, colValues);	
+			createRow($table, colName, colValues);	
 		});
 		$.each(numCols, function(_, colName){
-			createNumRow($table, colName);
+			createRow($table, colName);
 		});
 		return $table;
 	}
 	
-	function createOptionRow(table, colName, colValues){
+	function createRow(table, colName, colValues){
 		let $row = $("<tr/>");
 		createLabelCol($row, colName);
-		createOptionCol($row, colName, colValues);
-		table.append($row);
-	}
-	
-	function createNumRow(table, colName){
-		let $row = $("<tr/>");
-		createLabelCol($row, colName);
-		createNumColInput($row, colName);
+		if (typeof colValues === "undefined"){
+			createNumColInput($row, colName);
+		} else {
+			createOptionCol($row, colName, colValues);
+		}
 		table.append($row);
 	}
 	
