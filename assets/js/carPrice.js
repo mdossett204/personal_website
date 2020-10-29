@@ -93,5 +93,16 @@ $(function() {
 		if (!success){
 			return;
 		}
+		$.ajax({
+			type: "POST",
+			url: "http://localhost:8081/carPrice",
+			dataType: "json",
+			data: JSON.stringify(data),
+			contentType: "application/json",
+			success: function(result){
+				alert("The predicted price for your car is "+ result.pred_price);
+			}
+		});
 	});
+	
 });
