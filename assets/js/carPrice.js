@@ -10,7 +10,7 @@ $(function() {
 			createRow($table, colName);
 		});
 		let $button = $("<button/>").text("Get Price")
-									.attr({"id":"getPrice","style":"margin-top:10px;"});
+									.attr({"id":"getPrice", "style":"margin-top:10px;"});
 		let $col = $("<td/>").attr({"colspan": 2, "style": "text-align:center;"});
 		let $row = $("<tr/>").append($col);
 		$col.append($button);
@@ -67,4 +67,31 @@ $(function() {
   		}
 	});
 	
+	function validateInput(name, input){
+		if (numCols.includes(name)){
+			if (input.match(/^\d+\.?\d*$/)){
+				return parseFloat(input);
+			} 
+			alert("The input for "+ name.toUpperCase() + " needs to be a number.");
+			return false;
+		}
+		return input;
+	};
+	
+	$("#carData").on("click", "#getPrice", function(){
+		var data = {};
+		var success = true;
+		$("#carData input").each(function(){
+			let name = $(this).attr("name");
+			let value = validateInput(name, $(this).val());
+			if (value === false){
+				success = false;
+				return false;
+			}
+			data[name] = value;
+		});
+		if (!success){
+			return;
+		}
+	});
 });
