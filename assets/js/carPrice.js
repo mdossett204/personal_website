@@ -9,6 +9,12 @@ $(function() {
 		$.each(numCols, function(_, colName){
 			createRow($table, colName);
 		});
+		let $button = $("<button/>").text("Get Price")
+									.attr({"id":"getPrice","style":"margin-top:10px;"});
+		let $col = $("<td/>").attr({"colspan": 2, "style": "text-align:center;"});
+		let $row = $("<tr/>").append($col);
+		$col.append($button);
+		$table.append($row);
 		return $table;
 	}
 	
