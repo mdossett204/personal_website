@@ -1,12 +1,12 @@
 $(function() {
-	var numCols = ["mileage", "mpg", "engineSize"];
+	var numCols = {"mileage":350000, "mpg":475, "engineSize":6.8};
 	
 	function createTable(result){
 		let $table = $("<table/>");
 		$.each(result, function(colName, colValues){
 			createRow($table, colName, colValues);	
 		});
-		$.each(numCols, function(_, colName){
+		$.each(numCols, function(colName, _){
 			createRow($table, colName);
 		});
 		let $button = $("<button/>").text("Get Price")
@@ -67,13 +67,22 @@ $(function() {
 	});
 	
 	function validateInput(name, input){
-		if (numCols.includes(name) || name === "year"){
+		if (name in numCols){
 			if (input.match(/^\d+\.?\d*$/)){
-				return parseFloat(input);
+				let upperLimit = numCols[name];
+				let output = parseFloat(input);
+				if (output > upperLimit){
+					alert("Your input for "+ name.toUpperCase() +" is too high.");
+					return false
+				}
+				return output;
 			} 
 			alert("The input for "+ name.toUpperCase() + " needs to be a number.");
 			return false;
 		}
+		if (name === "year"){
+			return parseFloat(input);
+		} 
 		return input;
 	};
 	

@@ -30,5 +30,11 @@
   <script src='/assets/js/{{ js_file }}.js' type="text/javascript"></script>
   {% endfor %}
   {% endif %}
-
+	
+  {% if page.custom_css %}
+  {% for css_file in page.custom_css %}
+  <link href='/assets/css/{{ css_file }}.css' rel="stylesheet">
+  {% endfor %}
+  {% endif %}
+	
 </head>
