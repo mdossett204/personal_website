@@ -63,12 +63,11 @@ $(function() {
   		url: "/assets/js/feature_options.json",
   		success: function(result){
   			$("#carData").append(createTable(result));
-  			alert("Success!");
   		}
 	});
 	
 	function validateInput(name, input){
-		if (numCols.includes(name)){
+		if (numCols.includes(name) || name === "year"){
 			if (input.match(/^\d+\.?\d*$/)){
 				return parseFloat(input);
 			} 
