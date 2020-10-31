@@ -86,6 +86,11 @@ $(function() {
 		return input;
 	};
 	
+	$("#dialog").dialog({
+		autoOpen : false, modal : true, show : "blind", hide : "blind",
+		close: function(){$("#dialog").empty().hide();}})
+
+	
 	$("#carData").on("click", "#getPrice", function(){
 		var data = {};
 		var success = true;
@@ -108,9 +113,17 @@ $(function() {
 			data: JSON.stringify(data),
 			contentType: "application/json",
 			success: function(result){
-				alert("The predicted price for your car is "+ result.pred_price);
+				// alert("The predicted price for your car is "+ result.pred_price);
+				let message = $("<p/>").text("The predicted price for your car is "
+											 + result.pred_price);
+				$("#dialog").append(message);
+				$("#dialog").dialog("open");
+			},
+			error: function(){
+				let message = $("<p/>").text("Sorry we are experiencing difficulties.");
+				$("#dialog").append(message);
+				$("#dialog").dialog("open");
 			}
 		});
 	});
-	
 });
