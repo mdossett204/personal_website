@@ -83,6 +83,8 @@ $(function() {
 		if (name === "year"){
 			return parseFloat(input);
 		} 
+		if (name === "fuelType" && input === "Gasoline"){
+			return "Petrol";
 		return input;
 	};
 	
@@ -115,7 +117,7 @@ $(function() {
 			success: function(result){
 				// alert("The predicted price for your car is "+ result.pred_price);
 				let message = $("<p/>").text("The predicted price for your car is "
-											 + result.pred_price);
+											 + result.predicted_price);
 				$("#dialog").append(message);
 				$("#dialog").dialog("open");
 			},
