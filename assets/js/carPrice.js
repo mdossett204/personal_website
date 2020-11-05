@@ -85,6 +85,7 @@ $(function() {
 		} 
 		if (name === "fuelType" && input === "Gasoline"){
 			return "Petrol";
+		}
 		return input;
 	};
 	
