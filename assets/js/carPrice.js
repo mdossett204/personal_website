@@ -111,7 +111,7 @@ $(function() {
 		}
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:8081/carPrice",
+			url: "https://car-price.mindy-dossett.com/carPrice",
 			dataType: "json",
 			data: JSON.stringify(data),
 			contentType: "application/json",
