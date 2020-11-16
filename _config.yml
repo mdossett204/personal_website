@@ -2,7 +2,7 @@ title: Mindy Zhou Dossett – Data Scientist
 logo:  # you can add own logo.
 description: Passionate about problem solving using data and programming.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: https://mindy-dossett.com # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Author Settings
