@@ -2,7 +2,7 @@
 layout: post_app_1
 title:  Deploying Car Price Model 
 date:   2020-10-26 14:50:35 +0300
-image:  '/assets/img/07.jpg'
+image:  '/assets/img/04.jpg'
 tags:   [Regression, ML, AI, App, Car Price, prediction]
 custom_js:
   - jquery-ui.min
@@ -10,40 +10,29 @@ custom_js:
 custom_css:
   - jquery-ui.min
 ---
-Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+This post deploys a car price prediction Flask app using an ensemble of a deep learning regressor with categorical embeddings and a random forest regressor. This application is hosted using AWS EC2 instance. Due to the large size of tensorflow 2.2.0 package, a serverless approach of using lambda and API gateway is not practical.
 
-Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.
+For detailed machine learning/deep learning information, checkout this [GitHub link](https://github.com/mzhou356/CarPriceRegression).
 
----
+For detailed information regarding the Flask app, checkout this [GitHub Link](https://github.com/mzhou356/Car-Price-Model-Application/tree/main/Flask_app).
 
-## Quickly deploy strategic
 
-Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. **Nanotechnology immersion along the information** highway will close the loop on focusing solely on the bottom line. Podcasting operational change management inside of workflows to establish a framework.
+![AWS EC2](/assets/img/blog3_img1.png){:class="post-image img-blur"}.  
 
-Globally incubate standards compliant channels:
 
-> Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+## Key Concepts
 
-> Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+This Flask application takes a single user input with pre-defined car related parameters. It predicts the estimated price by averaging the results from the deep learning model and the random forest model. This application runs as a systemd service using NGINX as a proxy inside an Amazon Linux2 instance.
 
-Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.
+Because this personal website is hosted via https using S3 and AWS CloudFront, this requires the backend application to also enable https. Certbot and Let's Encrypt are used to enable https on the EC2 instance. More detailed implementations will be posted in the future blogs. 
 
-## Dramatically web services.
+![AWS S3 and CloudFront](/assets/img/blog3_img2.png){:class="post-image img-blur"}. 
 
-Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products.
+## Test Out the Application
 
-* **Functional solutions** - Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.
+![Predict The Car Price](/assets/img/blog3_img3.png){:class="post-image img-blur"}.  
 
-* **Objectively innovate** - Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.
+Fill in the corresponding car information below and check out the estimated price for your used car. 
 
-* **Credibly innovate** - Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas with optimal networks.
-
-* **Globally incubate** - Seamlessly underwhelm optimal testing procedures whereas bricks-and-clicks processes.
-
-Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.
-
-![]({{site.baseurl}}/assets/img/05.jpg)
-
-Dynamically target high-payoff intellectual capital for customized technologies. Objectively integrate emerging core competencies before process-centric communities. Dramatically evisculate holistic innovation rather than client-centric data.
-
-Progressively maintain extensive infomediaries via extensible niches. Dramatically disseminate standardized metrics after resource-leveling processes. Objectively pursue diverse catalysts for change for interoperable meta-services.
+## Disclaimer
+This application is for academic demonstration only. It is not meant for accurate predictions. To get an accurate estimate of your used car price, please use more reliable commercial websites. This blog is not legally liable for any incorrect predictions of any car prices.
