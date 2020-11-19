@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8">
-  <meta name="image" property="og:image" content="{{site.url}}{{site.author.image}}">
+  <meta name="image" property="og:image" content="{{site.url}}{% if page.image %}{{ page.image }}{% else %}{{site.author.image}}{% endif %}">
   <meta name="author" content="{{site.author.name}}">
 
   <!-- mobile responsive meta -->
