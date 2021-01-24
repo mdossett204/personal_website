@@ -32,5 +32,6 @@ In this post, we will go over the basic structure of a simple one layer neural n
 
 
 ## Next Blog 
-In the next blog, we will go over cost functions in a simple Neuarl Network and Gradient descent for optimization. 
-![Cost Function and Gradient Descent](/assets/img/blog8_img4.png}{:class="post-image img-blur"}
+In the next blog, we will go over cost functions in a simple Neuarl Network and Gradient descent for optimization.
+
+![gradient descent](/assets/img/blog8_img4.png){:class="post-image img-blur"}
