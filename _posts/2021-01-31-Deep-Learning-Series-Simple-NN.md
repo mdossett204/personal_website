@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Deploy Machine Learning Models using AWS Lambda and API gateway
-date:   2020-12-31 13:30:35 +0300
-image:  '/assets/img/07.jpg'
-tags:   [AWS, Lambda, API gateway, serverless deploy model, cloud compute]
+title:  Deep Learning Series Part A: A Simple Neural Network
+date:   2020-01-31 13:30:35 +0300
+image:  '/assets/img/08.jpg'
+tags:   [deep learning, logistic regression, machine learning, neural network, dense layer, ai]
 ---
 
 Today we will talk about how to deploy a Python machine learning model using AWS lambda with lambda layers and API gateway. The raw code can be found in this [Github link](https://github.com/mzhou356/Car-Price-Model-Application/tree/main/car_price_pred).
