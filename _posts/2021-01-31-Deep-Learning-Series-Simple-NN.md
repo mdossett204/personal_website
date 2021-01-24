@@ -11,7 +11,7 @@ Today we will talk about how to deploy a Python machine learning model using AWS
 
 As shown in the image below, an end user will send a HTTPS POST request to API gateway, this will trigger the lambda function to perform model prediction and send the result back to API gateway and back to the end user in the front end. 
 
-![serverless using API gateway and lambda](/assets/img/blog7_img1.png){:class="post-image img-blur"}
+![logistic regression as one layer NN](/assets/img/blog8_img1.png){:class="post-image img-blur"}
 
 We will go through the key steps necessary to set up the lambda function and API gateway but the machine learning step will be ignored in this blog. 
 
