@@ -1,34 +1,29 @@
-title: Mindy Zhou Dossett – Data Scientist
-logo:  # you can add own logo.
-description: Passionate about problem solving using data and programming.
+title: Mindy Dossett – AI | ML | Data Engineer
+logo: # you can add own logo.
+description: Engineer at heart, driven by data and powered by AI.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://mindy-dossett.com # the base hostname & protocol for your site, e.g. http://example.com
 
-
 # Author Settings
 author:
-  name: Mindy Zhou Dossett
-  image: '/assets/img/01.jpg'
-  job: Data Scientist | Data Engineer
-  bio: Solving problems using data, programming, and AI. 
+  name: Mindy Dossett
+  image: "/assets/img/01.jpg"
+  job: AI | ML | Data Engineer
+  bio: Where data meets curiosity, driven by AI, and scaled in the cloud.
   email: minzhou16@gmail.com
-
 
 # Contact links
 contact:
   - name: LinkedIn
     link: https://www.linkedin.com/in/mindyzhou16/
   - name: GitHub
-    link: https://github.com/mzhou356
-
+    link: https://github.com/mdossett204
 
 # Comment Section (Disqus)
-disqus-identifier:  # add your shortname for Disqus Comment. For example mr-brown
-
+disqus-identifier: # add your shortname for Disqus Comment. For example mr-brown
 
 # Google Analytics
 google-analytics: # add your identifier. For example UA-99631805-1.
-
 
 # Build settings
 markdown: kramdown
@@ -40,7 +35,7 @@ plugins:
 # Pages Path
 defaults:
   - scope:
-      path: '_pages'
+      path: "_pages"
     values:
       permalink: /:basename:output_ext
 
@@ -48,14 +43,13 @@ include:
   - _pages
 
 # Tags
-tag_page_dir:         tag
-tag_page_layout:      tag-page
-tag_permalink_style:  pretty
+tag_page_dir: tag
+tag_page_layout: tag-page
+tag_permalink_style: pretty
 
 sass:
   sass_dir: _sass
   style: compressed
-
 
 # Exclude from processing.
 exclude:
