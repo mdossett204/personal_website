@@ -35,11 +35,11 @@ I built a custom Gradio interface that gives you complete control over OpenAI's 
 
 **Costs awareness**: Model pricing information for informed decisions
 
-## [Quick Demo]()
+## [Quick Demo](https://www.youtube.com/watch?v=4cY1tTa_TxI)
 
 ## Technical Implementation
 
-This gradio app uses OpenAI's API directly, bypassing the web interface limitations. For detailed code implemenation, see [here](https://github.com/mdossett204/random-ai-projects/blob/custom_gpt_gradio_ui/custom_gpt_app/gradio_chat_app.py).
+This gradio app uses OpenAI's API directly, bypassing the web interface limitations. For detailed code implemenation, see [here](https://github.com/mdossett204/random-ai-projects/blob/main/custom_gpt_app/gradio_chat_app.py).
 
 ## Cost Analysis
 
@@ -58,11 +58,12 @@ This approach demonstrates key principles:
 
 - **cost optimization through model selection and max output token**
 
-- **direct API integration for maximum control (temperature control)**
+- **direct API integration with temperature control**
 
 - **Security-first design**
-  - local API key handling and chat history can be optionally saved locally and no cross chat history reference for maximum security
+  - no cross chat history reference
+  - you get to choose where and when your conversations will be saved.
 
 **The future of AI tooling is about building custom solutions that fit your exact needs, not being constrained by vendor UIs.**
 
-## Try it yourself by following the README.md: [Links to GitHub](https://github.com/mdossett204/random-ai-projects/tree/custom_gpt_gradio_ui/custom_gpt_app)
+## Try it yourself by following the README.md: [Links to GitHub](https://github.com/mdossett204/random-ai-projects/blob/main/custom_gpt_app/README.md)
