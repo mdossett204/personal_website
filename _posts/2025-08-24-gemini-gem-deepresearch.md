@@ -77,8 +77,8 @@ Look, I'm not saying AI replaces medical professionals (please consult your doct
 
 Now if you'll excuse me, I have an intermittent fasting routine to actually start instead of just researching forever.
 
----
+Want to see the whole process? Check out my video walkthrough where I show exactly how I set this up step by step.
 
-_P.S. – Want to see the whole process? Check out my video walkthrough [here](https://www.youtube.com/watch?v=I9Mv_1JCRJ8&feature=youtu.be) where I show exactly how I set this up step by step._
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I9Mv_1JCRJ8?si=9GuJrLAGVsEPuQNn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **What's your biggest challenge with health information overload? Drop a comment and let me know if this AI approach could work for your wellness goals too!**
