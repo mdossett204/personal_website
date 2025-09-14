@@ -20,7 +20,7 @@
 
 .post__date {
   margin-bottom: 30px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
   text-transform: uppercase;
   color: $gray-dark;
@@ -33,7 +33,7 @@
   background-repeat: no-repeat;
   background-color: $gray-white;
   &:after {
-    content: '';
+    content: "";
     display: table;
     padding-top: 65%;
   }
@@ -52,6 +52,90 @@
   ul li,
   ol li {
     margin-bottom: 15px;
+  }
+
+  /* Table styling for markdown tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 16px;
+    line-height: 24px;
+    border: 2px solid #000;
+    background: $white;
+
+    thead {
+      background-color: $gray-white;
+
+      th {
+        padding: 15px 18px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: $gray-dark;
+        border: 1px solid #000;
+        text-align: left;
+        font-family: "IBM Plex Mono", monospace;
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background-color 200ms ease;
+
+        &:nth-child(even) {
+          background-color: #fafbfc;
+        }
+
+        &:hover {
+          background-color: #f8f9fa;
+        }
+      }
+
+      td {
+        padding: 15px 18px;
+        color: $gray;
+        vertical-align: top;
+        border: 1px solid #000;
+
+        &:first-child {
+          font-weight: 500;
+          color: $dark;
+        }
+
+        // Style for checkmarks and status indicators
+        &:contains("✅") {
+          color: #28a745;
+        }
+
+        &:contains("❌") {
+          color: #dc3545;
+        }
+      }
+    }
+
+    @media (max-width: $tablet) {
+      font-size: 14px;
+
+      th,
+      td {
+        padding: 12px 15px;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 13px;
+
+      th,
+      td {
+        padding: 10px 12px;
+      }
+
+      th {
+        font-size: 12px;
+      }
+    }
   }
 }
 
@@ -79,7 +163,8 @@
     .post__nav-wrapper {
       visibility: visible;
       opacity: 1;
-      transition: opacity 150ms ease-out, visibility 0ms 0ms linear, transform 100ms ease-out;
+      transition: opacity 150ms ease-out, visibility 0ms 0ms linear,
+        transform 100ms ease-out;
     }
     .next__post-icon svg,
     .prev__post-icon svg {
@@ -93,12 +178,12 @@
   left: 0;
   .post__nav-wrapper {
     left: 0;
-    transform: translate3d(-30px,-50%,0);
+    transform: translate3d(-30px, -50%, 0);
   }
   &:hover {
     .post__nav-wrapper {
       padding: 10px 10px 10px 0;
-      transform: translate3d(0,-50%,0);
+      transform: translate3d(0, -50%, 0);
     }
     .prev__post-icon svg {
       transform: translatex(-40px);
@@ -107,7 +192,7 @@
 
   .post__nav-image {
     right: auto;
-    left: 0
+    left: 0;
   }
 
   .post__nav-image ~ h2 {
@@ -126,11 +211,11 @@
   right: 0;
   .post__nav-wrapper {
     right: 0;
-    transform: translate3d(30px,-50%,0);
+    transform: translate3d(30px, -50%, 0);
   }
   &:hover {
     .post__nav-wrapper {
-      transform: translate3d(0,-50%,0);
+      transform: translate3d(0, -50%, 0);
     }
     .next__post-icon svg {
       transform: translatex(40px);
@@ -183,7 +268,8 @@
   visibility: hidden;
   opacity: 0;
   background-color: $white;
-  transition: opacity 150ms ease-out, visibility 0ms 150ms linear, transform 100ms ease-out;
+  transition: opacity 150ms ease-out, visibility 0ms 150ms linear,
+    transform 100ms ease-out;
   pointer-events: auto;
   z-index: 100;
 }
@@ -198,7 +284,7 @@
   background-position: center;
   background-repeat: no-repeat;
   &:after {
-    content: '';
+    content: "";
     display: table;
     padding-top: 100%;
   }
@@ -218,7 +304,7 @@
   vertical-align: middle;
   time {
     padding-right: 5px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 12px;
     text-transform: uppercase;
     color: $gray-dark;
@@ -231,17 +317,17 @@
 }
 
 .post-tags__tag {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 14px;
   line-height: 24px;
   color: $gray-lighten;
   &:after {
-    content: ',';
+    content: ",";
     display: inline-block;
   }
   &:last-child {
     &:after {
-      content: '';
+      content: "";
       display: inline-block;
     }
   }
