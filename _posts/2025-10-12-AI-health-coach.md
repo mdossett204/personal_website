@@ -14,7 +14,6 @@ tags:
     medicine,
     longevity,
     biohacking,
-    building in public,
     health tech,
     ai for health,
     TechBlog,
@@ -28,7 +27,7 @@ Last week, I was hiking up a rocky trail in the Smoky Mountains, legs burning, h
 
 Not shuffle up the easy path. Not watch from the parking lot. I want to tackle the hard trails with the same strength and energy I have now in my late 30s.
 
-That moment sparked something. I'm building an AI-powered health app—from scratch—to help me get there. Not someday, but starting today. And I’m documenting the entire 12-week journey.
+That moment sparked something. I'm building an AI-powered health app—from scratch—to help me get there. Not someday, but starting today. This will be a personal, private 12-week journey.
 
 ## Why Build This Myself?
 
@@ -112,8 +111,6 @@ Here’s what it’ll do:
 - **Weeks 8–9:** RAG pipeline and document management
 - **Weeks 10–12:** Polish, test, deploy
 
-I’ll share weekly or bi-weekly updates—wins, failures, blockers, and breakthroughs.
-
 ## Why You Should Care
 
 If you’ve ever:
@@ -125,25 +122,9 @@ If you’ve ever:
 
 Then this project is for you too.
 
-I’m building this in public because we all deserve better tools to understand our health.  
+We all deserve better tools to understand our health.  
 The medical system won’t hand us transparency — so let’s build it ourselves.
-
-I’d love to make this a two-way journey.  
-If you’ve wrestled with confusing lab results, health data, or found something that worked for you — share it. I might feature a few stories in upcoming posts.
-
-## Come Along for the Ride
-
-Over the next 12 weeks, I’ll document:
-
-- ✅ Technical progress (and using AI to learn frontend)
-- ❌ Obstacles and how I solve them (or don’t)
-- 💡 Health data insights and LLM experiments
-- 🤔 What’s working, what’s not, and what I’m learning
-
-If this resonates, follow along. Drop a comment. Share your story. Let’s figure this out together.
 
 Here’s to hiking those hard trails in our 60s. 🏔️
 
 **Week 1 starts this week. 12 weeks. 8 hours a week. Let’s see what happens.**
-
-_Ever had a doctor recommend something that didn’t feel right? Or felt lost trying to make sense of your own health data? Tell me about it — I’d love to hear your story._
