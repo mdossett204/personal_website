@@ -91,6 +91,23 @@ layout: default
     </script>
     <script id="MathJax-script" type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     {% endif %}
+
+    <script>
+      // Automatically wrap tables in a div to allow horizontal scrolling on mobile
+      // without breaking the default table CSS rendering (like border-collapse).
+      document.addEventListener("DOMContentLoaded", function() {
+        var tables = document.querySelectorAll(".post__content table");
+        tables.forEach(function(table) {
+          var wrapper = document.createElement("div");
+          wrapper.style.overflowX = "auto";
+          wrapper.style.width = "100%";
+          wrapper.style.marginBottom = "30px";
+          table.parentNode.insertBefore(wrapper, table);
+          wrapper.appendChild(table);
+          table.style.marginBottom = "0"; // Move margin to wrapper
+        });
+      });
+    </script>
   </article>
   <!-- end post -->
 </div>

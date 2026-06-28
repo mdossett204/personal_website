@@ -157,11 +157,11 @@ save_sklearn_features(X_train, y_train, X_val, y_val, X_test, y_test,
 
 ---
 
-## Step 4: The Black Box vs. The White Box
+## Step 4: The Opaque Box vs. The Clear Box
 
 With features ready, Week 1 trains two flavors of classifier on the same data — and the contrast is the point.
 
-### The Black Box: Scikit-learn
+### The Opaque Box: Scikit-learn
 
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -174,7 +174,7 @@ print(accuracy_score(y_test, lr.predict(X_test)))
 
 One line to train. You get accuracy. You don't see how.
 
-### The White Box: PyTorch Training Loop
+### The Clear Box: PyTorch Training Loop
 
 ```python
 for epoch in range(num_epochs):
@@ -231,7 +231,7 @@ The output layer simply maps the 256 hidden units down to 20 raw scores — one 
 
 ## What the Results Tell Us (and What They Don't)
 
-The goal of Week 1 is not to chase accuracy numbers — it's to understand the mechanics of each approach and where they break down. That said, classical TF-IDF classifiers perform respectably on IMDB, and comparing Logistic Regression, SVM, Tree models, and a simple PyTorch neural network gives you a concrete feel for the tradeoffs between the black-box and white-box approaches.
+The goal of Week 1 is not to chase accuracy numbers — it's to understand the mechanics of each approach and where they break down. That said, classical TF-IDF classifiers perform respectably on IMDB, and comparing Logistic Regression, SVM, Tree models, and a simple PyTorch neural network gives you a concrete feel for the tradeoffs between the opaque-box and clear-box approaches.
 
 **The concept is the takeaway, not the score.** A well-tuned linear model on TF-IDF features is a genuinely strong baseline — and building intuition for _why_ it works prepares you to reason clearly about why later architectures improve on it.
 
@@ -273,6 +273,6 @@ Week 1 establishes something easy to underestimate: a strong classical baseline 
 
 The numbers look good. But the ceiling is visible. That tension is what drives the next eight weeks.
 
-**Next up — Week 2: The Mechanics of Meaning (Tokenization).** We open the black box of how modern NLP systems actually split text, and implement WordPiece and Byte Pair Encoding(BPE) from scratch.
+**Next up — Week 2: The Mechanics of Meaning (Tokenization).** We open the opaque box of how modern NLP systems actually split text, and implement WordPiece and Byte Pair Encoding(BPE) from scratch.
 
 > **Code:** All notebooks for this week are in [`week1-classical-nlp/`](https://github.com/mdossett204/AI-maths-foundations/tree/main/NLP-learning-notebooks/week1-classical-nlp) in the repo. The three notebooks are `classical-ML-vectorization.ipynb`, `binary-classification-pytorch-vs-sklearn.ipynb`, and `multiclass-classification-pytorch-vs-sklearn.ipynb`, supported by `utils.py`.
