@@ -47,7 +47,7 @@ That flexibility comes at a cost though: attention on its own has no idea what o
 
 ---
 
-## Step 1: Reusing Week 3's Artifacts, Again
+## Step 1: Reusing Week 3's Artifacts
 
 Like Weeks 4 and 5, this notebook doesn't touch tokenization or vocabulary. It reloads the same train/val/test splits, the same byte-level BPE vocabulary and merge rules, and the same pretrained DAN embedding table from Week 3:
 
@@ -147,11 +147,11 @@ def sinusoidal_position_encoding(
     return pe
 ```
 
-Early embedding dimensions oscillate quickly across positions; later ones oscillate much more slowly, since the `10000^{2i/d_model}` denominator grows with `i`. The result is a bank of waves at different frequencies — some capture fine local shifts, others capture broad position patterns. Because the whole table is deterministic, it can be precomputed once for a chosen max sequence length and reused across every batch. That's cheap, but it's also a hard ceiling: positions beyond that cached length simply don't exist unless the cache is rebuilt. And because this signal is injected only once, right at the input, it has to survive indirectly through every later block's residual stream — it can become diluted by the time it reaches the last layer.
+Early embedding dimensions oscillate quickly across positions; later ones oscillate much more slowly, since the `10000^{2i/d_model}` denominator grows with `i`. The result is a bank of waves at different frequencies — some capture fine local shifts, others capture broad position patterns. Because the whole table is deterministic, it can be precomputed once for a chosen max sequence length and reused across every batch. That's cheap, but it's also a hard ceiling: positions beyond that precomputed length simply don't exist unless the table is rebuilt. And because this signal is injected only once, right at the input, it has to survive indirectly through every later block's residual stream — it can become diluted by the time it reaches the last layer.
 
 ### Rotary Positional Encoding (RoPE)
 
-RoPE takes a completely different approach: instead of adding a position vector once at the input, it **rotates** pairs of dimensions inside the query and key vectors, inside every attention computation, at every layer. For frequency index `i` at position `p`:
+RoPE takes a completely different approach: instead of adding a position vector once at the input, it **rotates** pairs of dimensions inside the query and key vectors, inside every attention computation at every layer. For frequency index `i` at position `p`:
 
 $$
 \theta_{p,i} = p \cdot 10000^{-2i / d}
@@ -177,7 +177,7 @@ def rotate_half(x: torch.Tensor) -> torch.Tensor:
     return rotated.flatten(start_dim=-2)
 
 
-def build_rope_cache(
+def build_rope(
     seq_len: int,
     head_dim: int,
     device: Optional[torch.device] = None,
@@ -212,9 +212,7 @@ $$
 \mathrm{RoPE}(q, p) \cdot \mathrm{RoPE}(k, m) = f(q, k, p - m)
 $$
 
-and as that offset grows, the rotations drift further out of alignment, which gives the model a soft, built-in bias toward attending more strongly to nearby tokens. That's a meaningfully different failure mode than sinusoidal PE's hard `max_seq_len` ceiling, which is part of why RoPE (and its descendants like NTK-aware scaling, YaRN, and LongRoPE) is the standard choice in most modern LLM architectures — though it's worth being precise that RoPE's better long-range behavior doesn't mean it "solves" long context on its own; it just gives the model better _tools_ for distance-aware attention, and whether the model exploits them well still comes down to training.
-
-> **Note on RoPE Efficiency:** In our teaching implementation, `build_rope_cache` is called dynamically on every forward pass inside `MultiHeadAttention`. While functionally correct, this is computationally wasteful. In production models, RoPE caches are also precomputed once (like sinusoidal PE) into a buffer sized to `max_seq_len` and then sliced per batch, rather than being freshly generated per-block at every step.
+and because RoPE applies a spectrum of different rotation frequencies across the embedding dimensions, a larger offset $p - m$ causes these rotations (which involve both cosine and sine terms) to fall out of phase and destructively interfere when summed. This gives the model a soft, built-in bias toward attending more strongly to nearby tokens. That's a meaningfully different failure mode than sinusoidal PE's hard `max_seq_len` ceiling, which is part of why RoPE (and its descendants like NTK-aware scaling, YaRN, and LongRoPE) is the standard choice in most modern LLM architectures — though it's worth being precise that RoPE's better long-range behavior doesn't mean it "solves" long context on its own; it just gives the model better _tools_ for distance-aware attention, and whether the model exploits them well still comes down to training.
 
 ---
 
@@ -245,8 +243,8 @@ class MultiHeadAttention(nn.Module):
         value = _split_heads(self.v_proj(context), self.num_heads)
 
         if self.use_rope:
-            q_cos, q_sin = build_rope_cache(query.size(-2), self.head_dim, device=query.device)
-            k_cos, k_sin = build_rope_cache(key.size(-2), self.head_dim, device=key.device)
+            q_cos, q_sin = build_rope(query.size(-2), self.head_dim, device=query.device)
+            k_cos, k_sin = build_rope(key.size(-2), self.head_dim, device=key.device)
             query = apply_rope(query, q_cos, q_sin)
             key = apply_rope(key, k_cos, k_sin)
 
